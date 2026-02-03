@@ -128,6 +128,14 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
   font-weight: bold;
   margin-top:10px;
 }
+.sub-title{
+  color:#7d7d7d;   /* رمادي فاتح */
+  
+  font-size:14px;
+  margin-top:5px;
+  margin-bottom:8px;
+  font-weight:600;
+}
 
 .card-content{
   max-height:0;
@@ -287,13 +295,76 @@ footer{
   background:#2f2f2f;
   color:white;
 }
+/* ترتيب الباقات مع الخدمات الأساسية */
+.packages-wrapper{
+  display:flex;
+  gap:30px;
+  align-items:flex-start;
+}
+
+/* صندوق الخدمات الأساسية */
+.basic-services{
+  background:#ffffff;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  min-width:260px;
+  height:fit-content;
+}
+
+.basic-services h3{
+  font-size:20px;
+  margin-bottom:15px;
+  color:#3a3a3a;
+  text-align:center;
+}
+
+.basic-services ul{
+  list-style:none;
+  padding-right:18px;
+  line-height:2;
+}
+
+.basic-services li{
+  position:relative;
+  margin-bottom:8px;
+}
+
+.basic-services li::before{
+  content:"✓";
+  position:absolute;
+  right:-18px;
+  color:#2ecc71;
+  font-weight:bold;
+}
+
+/* عنوان فرعي داخل الباقات */
+.sub-title{
+  color:#a0a0a0;
+  font-size:14px;
+  margin-top:4px;
+  margin-bottom:6px;
+  font-weight:600;
+}
+
+/* موبايل */
+@media (max-width:768px){
+  .packages-wrapper{
+    flex-direction:column;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
-  <h2>احمد اسحاق فلاتة</h2>
+  <div class="brand">
+  <img src="images/logo.png" alt="شعار المكتب">
+  <h2>احمد اسحاق فلاتة للهندسة المعمارية</h2>
+</div>
+
 
   <div class="nav-links" id="navLinks">
     <a href="#home">الرئيسية</a>
@@ -332,53 +403,88 @@ footer{
     <div><i class="fa-solid fa-award"></i><h3>15</h3><p>مهندس متخصص</p></div>
   </div>
 </section>
-
 <section id="packages">
   <h2 class="title">باقات خدماتنا</h2>
-  <div class="packages">
-    <div class="package-card">
-      <div class="card-header">
-        <h3>الباقة الاقتصادية</h3>
-        <div class="price">2,500 ريال</div>
-      </div>
-      <div class="card-content">
-        <ul>
-          <li>التصميم المعماري الأولي</li>
-          <li>مخططات الأساسات</li>
-          <li>توزيع الفراغات الداخلية</li>
-        </ul>
-      </div>
+
+  <div class="packages-wrapper">
+
+    <!-- الخدمات الأساسية -->
+    <div class="basic-services">
+      <h3 style="color:#7d7d7d;">الخدمات الأساسية</h3>
+      <ul>
+        <li>استخراج التقرير المساحي</li>
+        <li>استخراج عقد النظافة</li>
+        <li>استخراج تقرير التربة</li>
+        <li>استخراج رخصة البناء</li>
+      </ul>
     </div>
-    <div class="package-card">
-      <div class="card-header">
-        <h3>الباقة المتوسطة</h3>
-        <div class="price">5,000 ريال</div>
+
+    <!-- كروت الباقات -->
+    <div class="packages">
+
+      <!-- الباقة الاقتصادية -->
+      <div class="package-card">
+        <div class="card-header">
+          <h3>الباقة الاقتصادية</h3>
+          <p class="sub-title">الخدمات الأساسية</p> 
+          <div class="price">7,400 ريال</div>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>تصميم الفكرة المعمارية</li>
+            <li>المخططات المعمارية</li>
+            <li>مخططات كفاءة الطاقة</li>
+            <li>المخططات الإنشائية</li>
+            <li>المخططات الكهربائية</li>
+            <li>المخططات الميكانيكية</li>
+            <li>تصميم الواجهة 3D</li>
+          </ul>
+        </div>
       </div>
-      <div class="card-content">
-        <ul>
-          <li>التصميم المعماري المتكامل</li>
-          <li>المخططات الإنشائية</li>
-          <li>المخططات الكهربائية</li>
-          <li>مخططات السباكة</li>
-        </ul>
+
+      <!-- باقة التميز -->
+      <div class="package-card">
+        <div class="card-header">
+          <h3>باقة التميز</h3>
+          <p class="sub-title">الخدمات الأساسية</p>
+          <p class="sub-title">تشمل خدمات الباقة الاقتصادية</p>
+          <div class="price">12,400 ريال</div>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>جميع خدمات الباقة الاقتصادية</li>
+            <li>تصميم الأسقف مع الإضاءة</li>
+            <li>مخططات توزيع الأثاث</li>
+            <li>منظور ثلاثي الأبعاد خارجي بريميوم</li>
+            <li>تصميم داخلي مبدئي لفراغين اختياري</li>
+            <li>جدول الكميات والمواصفات (إنشائي)</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="package-card">
-      <div class="card-header">
-        <h3>الباقة الشاملة</h3>
-        <div class="price">8,500 ريال</div>
+
+      <!-- باقة الفخامة -->
+      <div class="package-card">
+        <div class="card-header">
+          <h3>باقة الفخامة</h3>
+          <p class="sub-title">الخدمات الأساسية</p>
+          <p class="sub-title">تشمل خدمات الباقة الاقتصادية</p>
+          <p class="sub-title">تشمل خدمات باقة التميز</p>
+          <div class="price">20,400 ريال</div>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>جدول الكميات والمواصفات (تشطيبات)</li>
+            <li>جدول التسعير لأعمال البناء</li>
+            <li>مخطط مسارات التنفيذ</li>
+            <li>التصميم الداخلي كامل الفراغ حتى 120م²</li>
+          </ul>
+        </div>
       </div>
-      <div class="card-content">
-        <ul>
-          <li>التصميم الداخلي 3D</li>
-          <li>الاستدامة وكفاءة الطاقة</li>
-          <li>إشراف هندسي كامل</li>
-          <li>جداول الكميات</li>
-        </ul>
-      </div>
+
     </div>
   </div>
 </section>
+
 
 <section id="projects">
   <h2 class="title">مشاريعنا المميزة</h2>
@@ -404,7 +510,6 @@ footer{
   📍
     مكة المكرمة، السعودية
   </a>
-
 
       </div>
       <form>
@@ -447,7 +552,6 @@ function toggleMenu() {
 
 </body>
 </html>
-
 
 
 
