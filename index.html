@@ -218,11 +218,11 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
     url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c') center/cover no-repeat;
 }
 
-
 .phone-number{
-direction:ltr;
-unicode-bidi:bidi-override;
-display:inline-block;}
+  direction:ltr;
+  unicode-bidi:embed;
+}
+
 
 /* ===== التجاوب مع الشاشات (Mobile) ===== */
 @media (max-width:768px){
@@ -395,11 +395,16 @@ footer{
       <h2 class="contact-title">ابدأ مشروعك اليوم</h2>
       <div class="contact-info">
         <h3>معلومات الاتصال</h3>
-        <p>📞 <span class="phone-number"> +966 56 567 9677</p>
-        <p>✉️ <span class="phone-number"> info@engineeringdesign.sa</p>
-		<a href="https://maps.app.goo.gl/pRzr5b2VhutXbrFd8?g_st=iwb" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">
-     <span class="phone-number"> 📍مكة المكرمة، السعودية
-</a>
+		
+		<p>📞 <span class="phone-number">+966 56 567 9677</span></p>
+		
+<p>✉️ <span class="phone-number">Eng-sa@outlook.sa</span></p>
+
+  <a href="https://maps.app.goo.gl/pRzr5b2VhutXbrFd8?g_st=iwb" target="_blank"  style="color:inherit; text-decoration:underline;">
+  📍
+    مكة المكرمة، السعودية
+  </a>
+</p>
 
       </div>
       <form>
@@ -442,6 +447,7 @@ function toggleMenu() {
 
 </body>
 </html>
+
 
 
 
