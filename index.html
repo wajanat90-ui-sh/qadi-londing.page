@@ -56,7 +56,7 @@ nav a:hover{color:#000}
   cursor:pointer;
 }
 
-/* ===== Hero ===== */
+/* ===== Hero (Desktop) ===== */
 .hero{
   height:100vh;
   background:
@@ -86,16 +86,16 @@ nav a:hover{color:#000}
 
 /* Sections */
 section{max-width:1200px;margin:auto;padding:80px 20px}
-.title{text-align:caenter;font-size:34px;margin-bottom:50px}
+.title{text-align:center;font-size:34px;margin-bottom:50px}
 
 /* Stats */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;text-align:center}
 .stats i{font-size:34px;color:#555;margin-bottom:10px}
 
-/* ===== Packages (التعديل هنا لظهورها بجانب بعضها) ===== */
+/* ===== Packages ===== */
 .packages{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* إجبار 3 أعمدة بجانب بعضها */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 25px;
   margin-top: 40px;
   align-items: start;
@@ -165,19 +165,6 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
   border-radius:15px;
 }
 
-/* ===== Why Us ===== */
-.why{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  text-align:center;
-}
-.why i{
-  font-size:36px;
-  color:#555;
-  margin-bottom:15px;
-}
-
 /* ===== Contact ===== */
 .contact-section{
   padding:0;
@@ -229,13 +216,7 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
   background:url('https://images.adsttc.com/media/images/6636/c29f/c734/945c/42c2/96ed/large_jpg/architecture-as-a-product-what-makes-a-building-worth-repeating_1.jpg?1714864858') center/cover no-repeat;
 }
 
-/* ===== التجاوب مع الشاشات ===== */
-@media (max-width:1024px){
-  .packages {
-    grid-template-columns: repeat(2, 1fr); /* باقتين في الصف للتابلت */
-  }
-}
-
+/* ===== التجاوب مع الشاشات (Mobile) ===== */
 @media (max-width:768px){
   nav{ padding:15px 20px; }
   .menu-icon{ display:block; }
@@ -256,17 +237,37 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
   }
   
   .packages {
-    grid-template-columns: 1fr; /* باقة واحدة في الصف للجوال */
+    grid-template-columns: 1fr;
   }
 
+  /* تعديل التدرج ووضوح الصورة في الجوال */
   .hero{
-    height:auto;
-    padding:100px 20px;
-    text-align:center;
-    justify-content:center;
-    background-position:center;
+    height: auto;
+    min-height: 85vh; /* تقليل الارتفاع قليلاً ليناسب الجوال */
+    padding: 120px 20px 60px 20px;
+    text-align: center;
+    justify-content: center;
+    /* التدرج الجديد: من الأعلى للأسفل وبشفافية تسمح للصورة بالظهور */
+    background: 
+      linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.8) 80%, rgba(255,255,255,1) 100%),
+      url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
   }
-  .hero h1{font-size:32px;}
+
+  .hero h1 { 
+    font-size: 32px; 
+    margin-bottom: 15px;
+    text-shadow: 0px 2px 4px rgba(255,255,255,0.8); /* إضافة ظل خفيف للنص لزيادة الوضوح فوق الصورة */
+  }
+
+  /* تقسيم السطرين */
+  .hero p span {
+    display: block; 
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
   .contact-container{flex-direction:column;}
   .contact-left,.contact-right{width:100%;}
   .contact-right{height:250px;}
@@ -302,7 +303,10 @@ footer{
 <header id="home" class="hero">
   <div class="hero-content">
     <h1>نحوّل أفكارك الهندسية إلى واقع مبهر</h1>
-    <p>خدمات التصميم الهندسي المتكاملة من التخطيط إلى التنفيذ</p>
+    <p>
+      <span>خدمات التصميم الهندسي المتكاملة</span>
+      <span>من التخطيط إلى التنفيذ</span>
+    </p>
     <a href="#contact" class="btn">احصل على استشارة مجانية</a>
   </div>
 </header>
@@ -403,21 +407,18 @@ footer{
 </footer>
 
 <script>
-// فتح وإغلاق كروت الباقات
 document.querySelectorAll(".package-card").forEach(card => {
   card.addEventListener("click", () => {
     const content = card.querySelector(".card-content");
     if(content.style.maxHeight){
       content.style.maxHeight = null;
     } else {
-      // إغلاق أي كرت مفتوح آخر (اختياري)
       document.querySelectorAll(".card-content").forEach(c => c.style.maxHeight = null);
       content.style.maxHeight = content.scrollHeight + "px";
     }
   });
 });
 
-// قائمة الجوال
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   if (nav.style.right === "0px") {
