@@ -216,6 +216,11 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
   background:url('https://images.adsttc.com/media/images/6636/c29f/c734/945c/42c2/96ed/large_jpg/architecture-as-a-product-what-makes-a-building-worth-repeating_1.jpg?1714864858') center/cover no-repeat;
 }
 
+.phone-number{
+direction:ltr;
+unicode-bidi:bidi-override;
+display:inline-block;}
+
 /* ===== التجاوب مع الشاشات (Mobile) ===== */
 @media (max-width:768px){
   nav{ padding:15px 20px; }
@@ -387,9 +392,12 @@ footer{
       <h2 class="contact-title">ابدأ مشروعك اليوم</h2>
       <div class="contact-info">
         <h3>معلومات الاتصال</h3>
-        <p dir="ltr">📞 +966 56 567 9677</p>
+        <p class="phone-number">📞 +966 56 567 9677</p>
         <p>✉️ info@engineeringdesign.sa</p>
-        <a href="https://maps.app.goo.gl/pRzr5b2VhutXbrFd8?g_st=iwb" arget="_blank" rel="noopener" style="color:inherit" "text-decoration:underline;">📍 مكة المكرمة، السعودية</p>
+		<a href="https://maps.app.goo.gl/pRzr5b2VhutXbrFd8?g_st=iwb" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">
+      مكة المكرمة، السعودية📍
+</a>
+
       </div>
       <form>
         <input type="text" placeholder="الاسم الكامل">
@@ -430,6 +438,4 @@ function toggleMenu() {
 </script>
 
 </body>
-</html>S
-
-
+</html>
