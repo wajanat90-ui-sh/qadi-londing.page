@@ -23,7 +23,7 @@ body{
 /* ===== Navbar ===== */
 nav{
   background:white;
-  padding:20px 80px;
+  padding:10px 60px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -40,6 +40,13 @@ nav h2{font-size:22px;}
   display:flex;
   align-items:center;
 }
+.site-logo{
+  width:100%;
+  max-width:120px;   /* حجم مناسب للابتوب */
+  height:auto;
+  object-fit:contain;
+}
+
 
 nav a{
   margin-right:25px;
@@ -234,7 +241,19 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
 
 /* ===== التجاوب مع الشاشات (Mobile) ===== */
 @media (max-width:768px){
+   body{
+    padding-top:80px;
+  }
   nav{ padding:15px 20px; }
+  nav h2{
+  font-size:16px;
+  line-height:1.4;
+}
+
+  .site-logo{
+  max-width:90px;   /* اللوقو في الجوال */
+  }
+
   .menu-icon{ display:block; }
   .nav-links{
     position:fixed;
@@ -279,9 +298,14 @@ section{max-width:1200px;margin:auto;padding:80px 20px}
   .hero p span {
     display: block; 
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     font-weight: 600;
+  }
+   /* تصغير زر الهيرو في الجوال */
+  .btn{
+    padding:12px 28px;
+    font-size:14px;
   }
 
   .contact-container{flex-direction:column;}
@@ -353,6 +377,35 @@ footer{
     flex-direction:column;
   }
 }
+.basic-services-bar{
+  margin: 0 auto 40px auto;
+  max-width: 1000px;
+  padding: 15px 25px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  color:#555;
+  font-size:15px;
+  line-height:2;
+}
+
+.basic-services-bar span{
+  margin: 0 12px;
+  position: relative;
+}
+
+.basic-services-bar span:not(.basic-title)::before{
+  content: "•";
+  position: absolute;
+  right: -14px;
+  color: #c7a54b; /* ذهبي هادئ */
+}
+
+.basic-title{
+  font-weight:700;
+  color:#7d7d7d;
+  margin-left:10px;
+}
 
 </style>
 </head>
@@ -361,8 +414,9 @@ footer{
 
 <nav>
   <div class="brand">
-  <img src="images/logo.png" alt="شعار المكتب">
-  <h2>احمد اسحاق فلاتة للهندسة المعمارية</h2>
+  
+  <!--<img src="logo.png" width="50" hight="50" alt="شعار المكتب">-->
+  <img src="logo.png" alt="شعار المكتب"  class="site-logo">
 </div>
 
 
@@ -404,30 +458,28 @@ footer{
   </div>
 </section>
 <section id="packages">
+<!--الخدمات الاساسية-->
+<div class="basic-services-bar">
+  <span class="basic-title">الخدمات الأساسية:</span>
+  <span>استخراج التقرير المساحي</span>
+  <span>استخراج عقد النظافة</span>
+  <span>استخراج تقرير التربة</span>
+  <span>استخراج رخصة البناء</span>
+</div>
+
   <h2 class="title">باقات خدماتنا</h2>
 
   <div class="packages-wrapper">
 
-    <!-- الخدمات الأساسية -->
-    <div class="basic-services">
-      <h3 style="color:#7d7d7d;">الخدمات الأساسية</h3>
-      <ul>
-        <li>استخراج التقرير المساحي</li>
-        <li>استخراج عقد النظافة</li>
-        <li>استخراج تقرير التربة</li>
-        <li>استخراج رخصة البناء</li>
-      </ul>
-    </div>
-
     <!-- كروت الباقات -->
     <div class="packages">
 
-      <!-- الباقة الاقتصادية -->
+      <!-- الباقة التصميمية -->
       <div class="package-card">
         <div class="card-header">
           <h3>الباقة الاقتصادية</h3>
           <p class="sub-title">الخدمات الأساسية</p> 
-          <div class="price">7,400 ريال</div>
+          <div class="price">5,500 ريال</div>
         </div>
         <div class="card-content">
           <ul>
