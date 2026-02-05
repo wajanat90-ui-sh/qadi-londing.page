@@ -453,4 +453,9 @@ footer{
     <div><i class="fa-solid fa-users"></i><h3>+50</h3><p>عميل راضي</p></div>
     <div><i class="fa-solid fa-clock"></i><h3>10</h3><p>سنوات خبرة</p></div>
     <div><i class="fa-solid fa-award"></i><h3>15</h3><p>مهندس متخصص</p></div>
-  </div>
+  </diinv>
+  .itr{
+	  direction:itr
+	  unicode-bidi:embed;
+	  display:inline-block;
+  }
