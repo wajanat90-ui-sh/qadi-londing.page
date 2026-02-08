@@ -250,6 +250,10 @@ unicode-bidi:embed;}
    body{ padding-top:65px; }
    nav{ padding:8px 18px; }
    nav h2{ font-size:16px; }
+	.contact-container{flex-direction:column-reverse;}
+	.contact-left,
+	.contact-right{width:100%;}
+	
    
    .menu-icon{ display:block; }
 
@@ -505,3 +509,4 @@ footer{
     font-size:14px;
   }
 }
+
